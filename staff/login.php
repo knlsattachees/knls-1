@@ -142,6 +142,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
         <div class="reset-password-link">
             <a href="request_reset.php">Forgot your password?</a>
         </div>
+        <div>
+            <a href="../index1.php" class="btn btn-secondary mt-3">Go to Main Page</a>
+        </div>
     </section>
     <footer>
         <p>&copy; <?php echo date("Y"); ?> KNLSATTACHEES</p>
