@@ -4,6 +4,6 @@ if (isset($_SESSION['username'])) {
     header("Location: admin_login.php");
     exit();
 } else {
-    header("location: dashboard.php");
+    header("location: admin.php");
     exit();
 }
