@@ -1,7 +1,12 @@
 <?php
-include "db.php";
-$search_query = ""; // Initialize the variable
+session_start();
+include 'db.php';
 
+// Check if the user is logged in, if not then redirect to login page
+if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
+    header('Location: login.php');
+    exit;
+}
 // Fetch all clients using prepared statement
 $sql = "SELECT id, name, phone_no, id_no, check_in, check_out FROM clients";
 $stmt = $conn->prepare($sql);
