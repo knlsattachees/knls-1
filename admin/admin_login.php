@@ -137,6 +137,10 @@ if (isset($_POST['login'])) {
                         <button type="submit" name="login" class="btn btn-primary btn-block">Login</button>
                     </form>
                 </div>
+                <!-- Link outside the admin folder -->
+                <div>
+                    <a href="../index1.php" class="btn btn-secondary mt-3">Go to Main Index</a>
+                </div>
             </div>
         </div>
     </div>
