@@ -160,10 +160,6 @@ $result = $conn->query($sql);
         <h1>KNLS E-RESOURCE MANAGEMENT SYSTEM</h1>
         <h2>Admin Panel</h2>
         <div class="action-links">
-            <a href="dashboard.php" class="btn btn-primary">Home</a>
-            <a href="register_client.php" class="btn btn-primary">Register Client</a>
-            <a href="check_in.php" class="btn btn-primary">Check In</a>
-            <a href="check_out.php" class="btn btn-primary">Check Out</a>
             <a href="register_computer.php" class="btn btn-primary">Computer</a>
         </div>
     </header>
