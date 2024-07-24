@@ -1,7 +1,7 @@
 <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "knls";
+$password = "Knls_2020";
 $dbname = "client_management";
 
 $conn = new mysqli($servername, $username, $password, $dbname);

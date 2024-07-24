@@ -7,6 +7,7 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     header('Location: login.php');
     exit;
 }
+
 // Fetch all clients using prepared statement
 $sql = "SELECT id, name, phone_no, id_no, check_in, check_out FROM clients";
 $stmt = $conn->prepare($sql);
@@ -22,10 +23,10 @@ $result = $stmt->get_result();
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
-                   .sec_img {
+        .sec_img {
             min-height: 711px;
             width: 100%;
-            background-image: url(images/DSC_3970-scaled.jpg);
+            background-image: url(images/american.jpg);
             background-size: cover;
             background-position: center;
             display: flex;
@@ -64,22 +65,21 @@ $result = $stmt->get_result();
         .footer {
             text-align: center;
             padding: 20px 0;
-            background-color: #F48312; /* Bootstrap's primary blue color */
+            background-color: #b52233; /* Bootstrap's primary blue color */
             color: white;
         }
         .footer a {
             color: white; /* Ensure icons and email link are visible on blue background */
         }
-        .table-responsive
-        {
+        .table-responsive {
             max-height: 400px;
             overflow-y: auto;
-        }    /* Your existing styles */
+        } /* Your existing styles */
     </style>
 </head>
 <body>
-    <header style="background-color: #2D2C8E; text-align: center; color: white;">
-        <h1>KNLS E-RESOURCE MANAGEMENT SYSTEM</h1>
+    <header style="background-color: #242f4b; text-align: center; color: white;">
+        <h1>KNLS AMERICAN CORNER E-RESOURCE MANAGEMENT SYSTEM</h1>
         <div class="d-flex justify-content-center flex-wrap">
             <a href="register_client.php" class="btn btn-light mx-2 my-1">Register Client</a>
             <a href="check_in_merged.php" class="btn btn-light mx-2 my-1">Check In</a>
@@ -96,7 +96,7 @@ $result = $stmt->get_result();
                 <div class="form-group mr-2">
                     <input type="text" class="form-control" id="search_query" name="search_query" placeholder="Search by Username" value="<?php echo htmlspecialchars($search_query); ?>">
                 </div>
-                <button type="submit" class="btn btn-primary" name="search">Search</button>
+                <button type="submit" style="background-color: #242f4b; color: white" name="search">Search</button>
             </form>
             <div class="table-responsive">
                 <table class="table table-bordered table-striped bg-white text-dark">

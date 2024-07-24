@@ -143,7 +143,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['login'])) {
             <a href="request_reset.php">Forgot your password?</a>
         </div>
         <div>
-            <a href="../index1.php" class="btn btn-secondary mt-3">Go to Main Page</a>
+            <a href="/index.php" class="btn btn-secondary mt-3">Go to Main Page</a>
         </div>
     </section>
     <footer>

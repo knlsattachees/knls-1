@@ -40,14 +40,14 @@
     <header style="background-color: #2D2C8E; text-align: center; color: white;">
         <h1>KNLS E-RESOURCE MANAGEMENT SYSTEM</h1>
         <div class="d-flex justify-content-center flex-wrap">
-            <a href="dashboard.php" class="btn btn-light mx-2 my-1">Home</a>
+            <a href="/dashboard.php" class="btn btn-light mx-2 my-1">Home</a>
         </div>
     </header>
 
     <div class="container mt-5">
         <div class="card">
             <div class="card-body">
-                <h1 class="card-title text-center"> WELCOME PAGE</h1>
+                <h1 class="card-title text-center">WELCOME PAGE</h1>
                 <div class="col-md-9 register-right" style="margin-top: 40px; left: 80px;">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
                         <li class="nav-item">
@@ -57,15 +57,16 @@
                             <a class="nav-link" id="staff-tab" data-toggle="tab" href="#staff" role="tab" aria-controls="staff" aria-selected="false">Staff</a>
                         </li>
                     </ul>
-                    <div class="tab-content" id="myTabContent">
+                    <div class="tab-content mt-3" id="myTabContent">
                         <div class="tab-pane fade show active" id="admin" role="tabpanel" aria-labelledby="admin-tab">
-                            <ul class="list-group list-group-flush mt-3">
-                                <li class="list-group-item"><a href="admin/">Admin</a></li>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><a href="/admin/index.php">Admin Dashboard</a></li>
                             </ul>
                         </div>
                         <div class="tab-pane fade" id="staff" role="tabpanel" aria-labelledby="staff-tab">
-                            <ul class="list-group list-group-flush mt-3">
-                                <li class="list-group-item"><a href="staff/">Staff</a></li>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><a href="staff/mezzanine/index.php">Mezzanine</a></li>
+                                <li class="list-group-item"><a href="staff/american/index.php">American</a></li>
                             </ul>
                         </div>
                     </div>
@@ -76,7 +77,7 @@
 
     <!-- Watermark Image -->
     <div class="watermark-container">
-        <img src="staff/images/knls logo.png" alt="Watermark" class="watermark-image">
+        <img src="/staff/images/knls_logo.png" alt="Watermark" class="watermark-image">
     </div>
 
     <div class="footer">
@@ -89,3 +90,4 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
