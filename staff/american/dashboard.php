@@ -8,15 +8,29 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] !== true) {
     exit;
 }
 
-// Fetch all clients using prepared statement
-$sql = "SELECT id, name, phone_no, id_no, check_in, check_out FROM clients";
-$stmt = $conn->prepare($sql);
+// Initialize search query variable
+$search_query = "";
+
+// Check if the search form has been submitted
+if (isset($_POST['search'])) {
+    $search_query = $_POST['search_query'];
+    $sql = "SELECT id, name, phone_no, id_no, check_in, check_out FROM clients WHERE name LIKE ?";
+    $stmt = $conn->prepare($sql);
+    $search_param = "%" . $search_query . "%";
+    $stmt->bind_param("s", $search_param);
+} else {
+    // If no search query, fetch all clients
+    $sql = "SELECT id, name, phone_no, id_no, check_in, check_out FROM clients";
+    $stmt = $conn->prepare($sql);
+}
+
+// Execute the statement
 $stmt->execute();
 $result = $stmt->get_result();
 ?>
 <!DOCTYPE html>
 <html>
-<head> 
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Client Management System</title>
@@ -65,16 +79,16 @@ $result = $stmt->get_result();
         .footer {
             text-align: center;
             padding: 20px 0;
-            background-color: #b52233; /* Bootstrap's primary blue color */
+            background-color: #b52233;
             color: white;
         }
         .footer a {
-            color: white; /* Ensure icons and email link are visible on blue background */
+            color: white;
         }
         .table-responsive {
             max-height: 400px;
             overflow-y: auto;
-        } /* Your existing styles */
+        }
     </style>
 </head>
 <body>
@@ -126,7 +140,7 @@ $result = $stmt->get_result();
                     </tbody>
                 </table>
                 <?php if ($result->num_rows === 0): ?>
-                    <p class="text-center">No clients registered yet.</p>
+                    <p class="text-center">No clients found.</p>
                 <?php endif; ?>
             </div>
             <div class="mt-3">
@@ -150,3 +164,4 @@ $result = $stmt->get_result();
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
+
